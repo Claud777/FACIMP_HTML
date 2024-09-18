@@ -7,7 +7,7 @@
         <title>Calculadora</title>
         
         <!-- Link para o arquivo CSS externo -->
-        <link rel="stylesheet" href="styles/stylenota.css">
+        <link rel="stylesheet" href="styles/calc-style.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -44,38 +44,44 @@
         <header class="bg-primary text-white text-center py-3">
             <h1>Calculadora Aritimética</h1>
         </header>
+        
         <main class="container">   
-            <div class="row">
-                <div class="col" id="Btn_calcs">
-                    <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="row justify-content-center">
+                <div class="col-md-4" id="caixacalc">
+                    <!-- Centralizar a caixa de display -->
+                    <div class="mb-3 text-center">
+                        <input type="text" class="form-control text-rigth" id="display" placeholder="0" readonly>
+                    </div>
+                    <!-- Organizar os botões -->
+                    <div class="buttons text-center">
                         <button type="button" class="btn btn-info" onclick="addToDisplay('+')">+</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('8')">8</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('9')">9</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('7')">7</button><br>
+            
                         <button type="button" class="btn btn-info" onclick="addToDisplay('-')">-</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('6')">6</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('5')">5</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('4')">4</button><br>
+            
                         <button type="button" class="btn btn-info" onclick="addToDisplay('*')">x</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('3')">3</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('2')">2</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('1')">1</button><br>
+            
                         <button type="button" class="btn btn-info" onclick="addToDisplay('/')">/</button>
-                        <button type="button" class="btn btn-info" onclick="addToDisplay('^')">^</button><br>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('0')">0</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('.')">.</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="addToDisplay(',')">,</button><br>
+            
+                        <button type="button" class="btn btn-info" onclick="addToDisplay('^')">^</button>
+                        <button type="button" class="btn btn-success" onclick="calculate()">=</button>
+                        <button type="button" class="btn btn-secondary" onclick="clearDisplay()">CE</button>
+                        <button type="button" class="btn btn-danger" onclick="clearEntry()">C</button>
                     </div>
                 </div>
-                <div class="col" id="caixacalc">
-                    <input type="text" class="form-control" id="display" placeholder="0" readonly>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('8')">8</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('9')">9</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('7')">7</button><br>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('6')">6</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('5')">5</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('4')">4</button><br>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('3')">3</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('2')">2</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('1')">1</button><br>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('0')">0</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay('.')">.</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addToDisplay(',')">,</button><br>
-
-                    <button type="button" class="btn btn-success" onclick="calculate()">=</button>
-                    <button type="button" class="btn btn-secondary" onclick="clearDisplay()">CE</button>
-                    <button type="button" class="btn btn-danger" onclick="clearEntry()">C</button>
-                </div>
             </div>
-        </main>
+        </main>                
 
         <!--Footer-->   
         <footer class="bg-dark text-white mt-5">

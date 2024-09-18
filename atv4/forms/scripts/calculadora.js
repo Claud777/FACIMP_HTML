@@ -1,6 +1,6 @@
 function addToDisplay(value) {
     const display = document.getElementById('display');
-    if (display.value === '0' || display.value === 'Erro' || display.value === 'Infinity') {
+    if (display.value === '0' || display.value === '⚠️Erro⚠️' || display.value === '⚠️imps, dividir por 0⚠️') {
         display.value = value;
     } else {
         display.value += value;
@@ -22,8 +22,15 @@ function clearEntry() {
 function calculate() {
     const display = document.getElementById('display');
     try {
-        display.value = eval(display.value.replace('^', '**'));
+        let result = eval(display.value.replace('^', '**'));
+        if (result === Infinity || result === -Infinity) {
+            display.value = '⚠️impos, dividir por 0⚠️';
+            // Ou
+            // display.value = 'Valor Infinito';
+        } else {
+            display.value = result;
+        }
     } catch (error) {
-        display.value = 'Erro';
+        display.value = '⚠️Erro⚠️';
     }
 }
